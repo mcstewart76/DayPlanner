@@ -23,6 +23,10 @@ body {
   
   .description {
     white-space: pre-wrap;
+    width: 100%;
+    max-width:900px;
+    height:5em;
+
   }
   
   .time-block {
@@ -32,14 +36,18 @@ body {
   
   .row {
     white-space: pre-wrap;
-    height: 80px;
+    height: 5em;
     border-top: 1px solid white;
+    margin: 0px auto;
   }
   
   .hour {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
+    height: 5em;
+    width: 100%;
+    max-width: 5em;
   }
   
   .past {
@@ -63,9 +71,14 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06aed5;
     color: white;
+    width: 6em;
+    max-width: 100%;
+    height: 5em;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+    
   }
+  
