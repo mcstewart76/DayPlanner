@@ -24,7 +24,7 @@ $.each(timeBlocks, function(name, value){
     rowHour.classList.add('hour', 'pl-3', 'd-flex');
     rowHour.innerHTML = value;
    //console.log(rowHour.innerHTML)
-   console.log(timeBlock3)
+   //console.log(timeBlock3)
    rowDiv.appendChild(rowHour);
     
     const rowDescript = document.createElement('div');
@@ -39,13 +39,30 @@ $.each(timeBlocks, function(name, value){
 
 
 });
-if(parseInt(document.querySelector("#rowAdder > div:nth-child(4) > div.hour.pl-3.d-flex").innerText) === parseInt(timeBlock3)){
-    document.querySelector("#rowAdder > div:nth-child(4) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('present');
-    
+// if(parseInt(document.querySelector("#rowAdder > div:nth-child(4) > div.hour.pl-3.d-flex").innerText) === parseInt(timeBlock3)){
+//     document.querySelector("#rowAdder > div:nth-child(4) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('present');
+
    
-    console.log("yeye")
-    $(".descriptBox").removeClass("future");
-}
+//     console.log("yeye")
+//     $(".descriptBox").removeClass("future");
+// }
+$.each($('.hour'), function(index, value) {
+    //console.log(index + ':' + $(value).text());
+    if(index > 4){
+        document.querySelector("#rowAdder > div:nth-child(5) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(6) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(7) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(8) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(9) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+    }else if(index = 4){
+        document.querySelector("#rowAdder > div:nth-child(4) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('present')
+    }
+    $(".descriptBox").addClass("past")
+    
+    
+  });
+
+
 // else if(){
 
 // }
