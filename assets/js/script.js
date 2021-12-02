@@ -1,5 +1,6 @@
 //Moment times
-const rowAdd = document.getElementsByClassName("rowAdder");
+const rowAdd = document.getElementById("rowAdder");
+const timeGrab = document.getElementsByClassName('hour')
 var currentTime = moment();
 // append times to blocks
 
@@ -12,24 +13,46 @@ var timeBlock5 = moment().add(2,'h').format('hA');
 var timeBlock6 = moment().add(3,'h').format('hA');
 var timeBlock7 = moment().add(4,'h').format('hA');
 var timeBlock8 = moment().add(5,'h').format('hA');
+
 const timeBlocks = [timeBlock0, timeBlock1, timeBlock2, timeBlock3, timeBlock4, timeBlock5, timeBlock6, timeBlock7, timeBlock8];
 $.each(timeBlocks, function(name, value){
-console.log(`${name} = ${value}`)
+//console.log(`${name} = ${value}`)
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row', 'justify-content-center', 'd-flex', 'flex-nowrap');
+
+    const rowHour = document.createElement('div');
+    rowHour.classList.add('hour', 'pl-3', 'd-flex');
+    rowHour.innerHTML = value;
+   //console.log(rowHour.innerHTML)
+   console.log(timeBlock3)
+   rowDiv.appendChild(rowHour);
+    
+    const rowDescript = document.createElement('div');
+    rowDescript.classList.add('description', 'px-1', 'd-flex', 'descriptBox', 'time-block');
+    rowDiv.appendChild(rowDescript);
+    
+    const rowSave = document.createElement('div');
+    rowSave.classList.add('saveBtn', 'm-0', 'd-flex');
+    rowDiv.appendChild(rowSave);
+
+    rowAdd.appendChild(rowDiv)
+
 
 });
-if(currentTime.format("hA") == timeBlock3){
- $("#hour").text(timeBlock3);   
- $("#descriptBox").addClass("present");
-//  $("#descriptBox").removeClass("past")
+if(parseInt(document.querySelector("#rowAdder > div:nth-child(4) > div.hour.pl-3.d-flex").innerText) === parseInt(timeBlock3)){
+    document.querySelector("#rowAdder > div:nth-child(4) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('present');
+    
+   
+    console.log("yeye")
+    $(".descriptBox").removeClass("future");
 }
-if(currentTime.format("hA") < timeBlock3){
-       
-    $("#descriptBox").addClass("future");
-}
-if(currentTime.format("hA") > timeBlock3){
-       
-    $("#descriptBox").addClass("past");
-}
+// else if(){
+
+// }
+// } else if(parseInt(document.querySelector("#rowAdder > div:nth-child(3) > div.hour.pl-3.d-flex").innerText) === parseInt(timeBlock3)) {
+//     $(".descriptBox").removeClass("future");
+// }
+
 
 //create rows by appending classes
 
