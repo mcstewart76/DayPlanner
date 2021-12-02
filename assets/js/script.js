@@ -27,11 +27,11 @@ $.each(timeBlocks, function(name, value){
    //console.log(timeBlock3)
    rowDiv.appendChild(rowHour);
     
-    const rowDescript = document.createElement('div');
+    const rowDescript = document.createElement('textarea');
     rowDescript.classList.add('description', 'px-1', 'd-flex', 'descriptBox', 'time-block');
     rowDiv.appendChild(rowDescript);
     
-    const rowSave = document.createElement('div');
+    const rowSave = document.createElement('button');
     rowSave.classList.add('saveBtn', 'm-0', 'd-flex');
     rowDiv.appendChild(rowSave);
 
@@ -49,13 +49,13 @@ $.each(timeBlocks, function(name, value){
 $.each($('.hour'), function(index, value) {
     //console.log(index + ':' + $(value).text());
     if(index > 4){
-        document.querySelector("#rowAdder > div:nth-child(5) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
-        document.querySelector("#rowAdder > div:nth-child(6) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
-        document.querySelector("#rowAdder > div:nth-child(7) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
-        document.querySelector("#rowAdder > div:nth-child(8) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
-        document.querySelector("#rowAdder > div:nth-child(9) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(5) > textarea").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(6) > textarea").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(7) > textarea").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(8) > textarea").classList.add('future')
+        document.querySelector("#rowAdder > div:nth-child(9) > textarea").classList.add('future')
     }else if(index = 4){
-        document.querySelector("#rowAdder > div:nth-child(4) > div.description.px-1.d-flex.descriptBox.time-block").classList.add('present')
+        document.querySelector("#rowAdder > div:nth-child(4) > textarea").classList.add('present')
     }
     $(".descriptBox").addClass("past")
     
