@@ -7,4 +7,5 @@ Provided an original html code and style sheet, the goal was to create a daily p
 
 >**Picture of the site**
 
-![This webpage includes a dynamic time sheet for all your daily scheduling needs](./assets/images/DayPlan.JPG)
+![This webpage includes a dynamic time sheet for all your daily scheduling needs]
+<img src="https://github.com/mcstewart76/DayPlanner/raw/main/assets/images/DayPlan.JPG">
